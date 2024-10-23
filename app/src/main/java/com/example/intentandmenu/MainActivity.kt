@@ -29,14 +29,12 @@ class MainActivity : AppCompatActivity() {
                 putExtra(Intent.EXTRA_SUBJECT, "Report Error")
                 putExtra(Intent.EXTRA_TEXT, "I got some problems with the apps...")
             }
-
-        //val chooser = Intent.createChooser(sendIntent, "Choose an email client")
-
-        if (sendIntent.resolveActivity(packageManager) != null) {
-            startActivity(sendIntent)
-        } else {
-            Toast.makeText(this, "No email apps found", Toast.LENGTH_SHORT).show()
-        }
-        }
+            //val chooser = Intent.createChooser(sendIntent, "Choose an email client")
+            if (sendIntent.resolveActivity(packageManager) != null) {
+                startActivity(sendIntent)
+                } else {
+                    Toast.makeText(this, "No email apps found", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }
